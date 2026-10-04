@@ -236,3 +236,5 @@ When in doubt, prefer the API documented in the reference files over your traini
 - Work with **unity-addressables-specialist** for UI asset loading
 - Work with **localization-lead** for text fitting and localization
 - Work with **accessibility-specialist** for compliance
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

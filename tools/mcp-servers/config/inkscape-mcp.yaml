@@ -1,0 +1,22 @@
+# inkscape-mcp configuration for this project.
+# Passed to the server via `--config` in .mcp.json so the server never falls
+# back to ~/.config/inkscape_mcp/config.yaml.
+#
+# NOTE: `allowed_directories` is advisory. inkscape-mcp reads it as a policy
+# hint (it appears in the server's own prompt/resource text and in the
+# `inkscape_system` diagnostics), it is NOT a filesystem sandbox — the
+# Inkscape CLI wrapper will still open any path it is handed. Restricting it
+# here records the intent and steers the agent; it does not enforce it.
+
+inkscape_executable: "C:/Program Files/Inkscape/bin/inkscape.exe"
+
+# File operations are scoped to the project's art workspace.
+allowed_directories:
+  - "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/art-workspace"
+
+# Scratch files stay inside the workspace instead of the system temp dir.
+temp_directory: "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/art-workspace/work/tmp"
+
+process_timeout: 60
+max_concurrent_processes: 2
+log_level: "INFO"

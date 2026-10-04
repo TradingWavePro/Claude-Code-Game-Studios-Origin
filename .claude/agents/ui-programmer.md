@@ -114,3 +114,5 @@ If the reference files do not cover an API or a difference, say so and mark it u
 
 ### Reports to: `lead-programmer`
 ### Implements specs from: `art-director`, `ux-designer`
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

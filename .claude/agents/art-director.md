@@ -149,3 +149,10 @@ the art-bible rule at stake, acknowledge the other goal as legitimate, and
 escalate it as a trade-off between the two rather than deciding it
 Coordinates with: `technical-artist` for feasibility, `ui-programmer` for
 implementation constraints, `audio-director` where visual and audio identity meet
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.
+
+**When briefing AI-generated art, three rules the generator cannot learn from its own defaults:**
+1. **Never put a number in a positive prompt and expect anatomy.** "six legs", "THREE body segments" are style noise — SD1.5 does not count. If a character must hit a spec (limb count, body segments), **spec it and have code draw the silhouette; the model only fills texture** — or require a LoRA trained on that creature. Never approve a fallback roll on the strength of a prompt phrase.
+2. **A negative prompt must never negate the style the positive asks for.** A negative carrying `3d render / matte / flat vector / icon / outline` turned a gloss-clay-style request into an anime girl; removing those terms made it collapse onto a single sphere. Check the pair for a self-fighting recipe before running it.
+3. **A style LoRA fixes style, not structure.** A LoRA trained on icons steers look and contrast; it will not add limbs or body segments. When briefing a character, say which of the two you are asking for.

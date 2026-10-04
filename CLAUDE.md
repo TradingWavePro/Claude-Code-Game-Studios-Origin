@@ -5,11 +5,11 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Technology Stack
 
-- **Engine**: [CHOOSE: Godot 4 / Unity / Unreal Engine 5]
-- **Language**: [CHOOSE: GDScript / C# / C++ / Blueprint]
+- **Engine**: Unity 6000.3.17f1
+- **Language**: C#
 - **Version Control**: Git with trunk-based development
-- **Build System**: [SPECIFY after choosing engine]
-- **Asset Pipeline**: [SPECIFY after choosing engine]
+- **Build System**: Unity Build Pipeline
+- **Asset Pipeline**: Unity Asset Import Pipeline + Addressables
 
 > **Note**: Engine-specialist agents exist for Godot, Unity, and Unreal with
 > dedicated sub-specialists. Use the set matching your engine.
@@ -26,7 +26,7 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
      session. It defaults to Godot (the template's example engine); skills that
      need the pinned version read docs/engine-reference/<engine>/VERSION.md on
      demand regardless of this import. -->
-@docs/engine-reference/godot/VERSION.md
+@docs/engine-reference/unity/VERSION.md
 
 
 ## Technical Preferences
@@ -62,6 +62,18 @@ See `docs/COLLABORATIVE-DESIGN-PRINCIPLE.md` for full protocol and examples.
 ## Coding Standards
 
 @.claude/docs/coding-standards.md
+
+## Art Toolchain
+
+@.claude/rules/art-tooling.md
+
+Local art tools: Blender 4.5, Krita 5.3.4, Inkscape 1.4.4, Blockbench 5.2.1, GIMP 3.2.6, ComfyUI (localhost:8188), Penpot (localhost:9001). Full setup: `docs/ART_TOOLCHAIN.md`.
+
+> [!WARNING]
+> 1. **Source `tools/art/env.sh` every session** — `source tools/art/env.sh && command -v blender krita inkscape blockbench gimp-console-3.2` — GameArtBin is Windows-form and unreadable by MSYS without it.
+> 2. **Geometry in code, not AI prompts** — SD1.5 draws cubes with shadows on 4GB VRAM. Pillow draws squares correctly. See `references/art-pipeline-gotchas.md` §B.
+> 3. **Don't trust logs, measure artifacts** — a checker that counts 69→32→0 on the same file measures nothing. Separate MEASURE from VERDICT. See `references/art-pipeline-gotchas.md` §H.
+> 4. **One GPU generation at a time** — never submit a second ComfyUI job while one is running. Sequential, foreground; require ≥ 3 GB free VRAM first. ComfyUI serialises anyway, so a second submit is only a queued job you have lost track of. See `.claude/rules/art-tooling.md` rule 5.
 
 ## Context Management
 

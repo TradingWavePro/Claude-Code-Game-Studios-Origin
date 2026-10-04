@@ -121,6 +121,9 @@ Saved/
 *.log
 __pycache__/
 *.pyc
+# Python venv for the repo (tools/art/env.sh expects <repo-root>/.venv).
+# Machine-specific paths inside it (activate scripts) are not portable.
+.venv/
 node_modules/
 .npm/
 
@@ -171,3 +174,17 @@ $RECYCLE.BIN/
 # the project root. Anchored so a reports/ folder elsewhere stays tracked.
 /reports/
 /test-results/
+
+# === Vendored third-party MCP server checkouts ===
+# These are clones/install outputs, not sources of this project. Recreate them
+# with the commands in docs/local-tools/SMOKE-TESTS.md. Only config/ and
+# smoke.py under tools/mcp-servers/ are tracked.
+tools/mcp-servers/penpot-mcp/
+tools/mcp-servers/blockbench-mcp/
+tools/mcp-servers/krita-mcp/
+
+# === Local art workspace ===
+# Renders and scratch files written by the ComfyUI / Inkscape / Penpot MCP
+# servers. The directory layout is kept via .gitkeep; contents are local.
+art-workspace/**/*
+!**/.gitkeep

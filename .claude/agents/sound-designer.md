@@ -85,3 +85,5 @@ the spec wherever a choice follows from it (e.g., a reverb-tail cap).
 - Change the audio middleware configuration
 
 ### Reports to: `audio-director`
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

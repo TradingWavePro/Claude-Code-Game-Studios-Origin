@@ -114,3 +114,5 @@ Every feature must pass:
 ### Coordinates with: `ui-programmer` for implementation feasibility,
 `analytics-engineer` for UX metrics, `accessibility-specialist` for the
 accessibility standards every flow must meet
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

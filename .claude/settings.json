@@ -16,7 +16,10 @@
       "Bash(dir *)",
       "Bash(python -m json.tool*)",
       "Bash(python -m pytest*)",
-      "Bash(py -m pytest*)"
+      "Bash(py -m pytest*)",
+      "Bash(*tools/art/audit_assets.py*)",
+      "Bash(*tools/art/audit_sync.py*)",
+      "Bash(source tools/art/env.sh*)"
     ],
     "deny": [
       "Bash(rm -rf *)",

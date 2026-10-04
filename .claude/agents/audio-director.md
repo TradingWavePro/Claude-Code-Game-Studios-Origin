@@ -124,3 +124,5 @@ Reports to: `creative-director` for vision alignment
 Coordinates with: `game-designer` for mechanical audio feedback,
 `narrative-director` for emotional alignment, `lead-programmer` for audio
 system implementation
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

@@ -10,10 +10,10 @@
 
 ## Engine & Language
 
-- **Engine**: [TO BE CONFIGURED — run /setup-engine]
-- **Language**: [TO BE CONFIGURED]
-- **Rendering**: [TO BE CONFIGURED]
-- **Physics**: [TO BE CONFIGURED]
+- **Engine**: Unity 6000.3.17f1
+- **Language**: C#
+- **Rendering**: URP (Universal Render Pipeline)
+- **Physics**: PhysX
 
 ## Input & Platform
 
@@ -29,12 +29,12 @@
 
 ## Naming Conventions
 
-- **Classes**: [TO BE CONFIGURED]
-- **Variables**: [TO BE CONFIGURED]
-- **Signals/Events**: [TO BE CONFIGURED]
-- **Files**: [TO BE CONFIGURED]
-- **Scenes/Prefabs**: [TO BE CONFIGURED]
-- **Constants**: [TO BE CONFIGURED]
+- **Classes**: PascalCase (e.g. `PlayerController`)
+- **Variables**: camelCase (e.g. `moveSpeed`)
+- **Signals/Events**: PascalCase `On<Event>` (e.g. `OnDamageTaken`)
+- **Files**: PascalCase matching class (e.g. `PlayerController.cs`)
+- **Scenes/Prefabs**: PascalCase
+- **Constants**: `SCREAMING_SNAKE` (note: Unity accepts both PascalCase and SCREAMING_SNAKE)
 
 ## Performance Budgets
 
@@ -70,12 +70,14 @@
 <!-- Read by /code-review, /architecture-decision, /architecture-review, and team skills -->
 <!-- to know which specialist to spawn for engine-specific validation. -->
 
-- **Primary**: [TO BE CONFIGURED — run /setup-engine]
-- **Language/Code Specialist**: [TO BE CONFIGURED]
-- **Shader Specialist**: [TO BE CONFIGURED]
-- **UI Specialist**: [TO BE CONFIGURED]
-- **Additional Specialists**: [TO BE CONFIGURED]
-- **Routing Notes**: [TO BE CONFIGURED]
+- **Primary**: unity-specialist
+- **Language/Code Specialist**: unity-specialist (C# review — primary covers it)
+- **Shader Specialist**: unity-shader-specialist (Shader Graph, HLSL, URP/HDRP materials)
+- **UI Specialist**: unity-ui-specialist (UI Toolkit UXML/USS, UGUI Canvas, runtime UI)
+- **Additional Specialists**:
+  - unity-dots-specialist (Data-Oriented Technology Stack: ECS, Jobs, Burst)
+  - unity-addressables-specialist (Asset management, async loading, content updates)
+- **Routing Notes**: unity-specialist handles C# code review, gameplay logic, MonoBehaviour patterns, and general Unity API usage. Shader/UI/DOTS/Addressables specialists handle their respective subsystems.
 
 ### File Extension Routing
 
@@ -84,9 +86,10 @@
 
 | File Extension / Type | Specialist to Spawn |
 |-----------------------|---------------------|
-| Game code (primary language) | [TO BE CONFIGURED] |
-| Shader / material files | [TO BE CONFIGURED] |
-| UI / screen files | [TO BE CONFIGURED] |
-| Scene / prefab / level files | [TO BE CONFIGURED] |
-| Native extension / plugin files | [TO BE CONFIGURED] |
-| General architecture review | Primary |
+| `.cs` (C# scripts) | unity-specialist |
+| `.shader`, `.shadergraph`, `.mat` | unity-shader-specialist |
+| `.uxml`, `.uss` (UI Toolkit) | unity-ui-specialist |
+| `.prefab`, `.unity` (scenes) | unity-specialist |
+| DOTS/ECS systems (`.cs` in specific namespaces) | unity-dots-specialist |
+| Addressables config | unity-addressables-specialist |
+| General architecture review | unity-specialist (Primary) |

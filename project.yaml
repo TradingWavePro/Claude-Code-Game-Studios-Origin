@@ -25,3 +25,33 @@ framework:
 # here. `/settings --local <key>=<value>` writes there; `/settings <key>=<value>`
 # edits this file. See `.claude/docs/config-resolution.md` for the full
 # precedence order.
+
+engine:
+  name: Unity
+  version: 6000.3.17f1
+  language: C#
+  rendering: URP
+  physics: PhysX
+  path: "C:/Program Files/Unity/Hub/Editor/6000.3.17f1/Editor/Unity.exe"  # UNVERIFIED — probed location, actual install may differ
+
+specialists:
+  code: unity-specialist
+  shader: unity-shader-specialist
+  ui: unity-ui-specialist
+  additional:
+    - unity-dots-specialist
+    - unity-addressables-specialist
+
+naming:
+  classes: PascalCase
+  variables: camelCase
+  constants: SCREAMING_SNAKE  # UNVERIFIED — Unity accepts both PascalCase and SCREAMING_SNAKE; verify project convention
+  signals: "On<Event>"  # UNVERIFIED — C# event naming convention
+  files: PascalCase
+  scenes: PascalCase
+
+commands:
+  build: '[TO BE CONFIGURED]'  # Unity build target unknown — set via /settings once project created
+  test: '"C:/Program Files/Unity/Hub/Editor/6000.3.17f1/Editor/Unity.exe" -batchmode -runTests -projectPath . -testPlatform EditMode -testResults test-results/editmode.xml'
+  run: '[TO BE CONFIGURED]'  # Unity run command depends on build target
+  smoke: '"C:/Program Files/Unity/Hub/Editor/6000.3.17f1/Editor/Unity.exe" -batchmode -quit -projectPath . -logFile -'

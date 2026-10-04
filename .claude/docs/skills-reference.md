@@ -1,6 +1,6 @@
 # Available Skills (Slash Commands)
 
-74 slash commands organized by phase. Type `/` in Claude Code to access any of them.
+76 slash commands organized by phase. Type `/` in Claude Code to access any of them.
 
 ## Onboarding & Navigation
 
@@ -29,6 +29,8 @@
 | Command | Purpose |
 |---------|---------|
 | `/art-bible` | Guided, section-by-section Art Bible authoring — creates visual identity spec before asset production begins |
+| `/art-brief` | Art tool routing — which tool for which job, with hard rules on what NOT to use |
+| `/art-audit` | Audit produced art assets against their spec and sync against the whole game |
 | `/asset-spec` | Generate per-asset visual specifications and AI generation prompts from GDDs, level docs, or character profiles |
 | `/asset-audit` | Audit assets for naming conventions, file size budgets, and pipeline compliance |
 

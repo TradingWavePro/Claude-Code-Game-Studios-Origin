@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "comfyui": {
+      "command": "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/.venv/Scripts/comfy-mcp.exe",
+      "args": [],
+      "env": {
+        "COMFY_LOCAL_URL": "http://127.0.0.1:8188",
+        "COMFY_BIN": "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/.venv/Scripts/comfy.exe",
+        "COMFY_CLI_MIN_VERSION": "1.14.0"
+      }
+    },
+    "inkscape": {
+      "command": "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/.venv/Scripts/inkscape-mcp.exe",
+      "args": [
+        "--config",
+        "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/tools/mcp-servers/config/inkscape-mcp.yaml"
+      ]
+    },
+    "penpot": {
+      "type": "http",
+      "url": "http://127.0.0.1:4401/mcp"
+    },
+    "krita": {
+      "command": "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/.venv/Scripts/python.exe",
+      "args": [
+        "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/tools/mcp-servers/krita-mcp/mcp_server.py"
+      ]
+    },
+    "blockbench": {
+      "command": "C:/Program Files/nodejs/node.exe",
+      "args": [
+        "C:/Users/bx9ga/Documents/GitHub/Claude-Code-Game-Studios-Origin/tools/mcp-servers/blockbench-mcp/dist/index.js"
+      ],
+      "env": {
+        "BLOCKBENCH_MCP_PORT": "8787",
+        "BLOCKBENCH_MCP_HOST": "127.0.0.1"
+      }
+    }
+  }
+}

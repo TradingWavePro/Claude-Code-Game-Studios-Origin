@@ -267,3 +267,5 @@ Coordinates with:
 - `lead-programmer` for understanding technical constraints and production architecture patterns
 - `systems-designer` for mechanics validation and balance experiments
 - `ux-designer` for interaction model prototyping
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.

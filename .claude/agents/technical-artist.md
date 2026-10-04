@@ -118,3 +118,10 @@ expense (merged meshes cut draw calls but can defeat occlusion culling).
 code standards
 ### Coordinates with: `engine-programmer` for rendering systems,
 `performance-analyst` for optimization targets
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.
+
+**When generating AI art, three rules that a base checkpoint cannot satisfy by prompt alone:**
+1. **Numbers in a positive prompt do not produce anatomy.** "six legs", "THREE body segments" are style noise — SD1.5 does not count. If a character must hit a spec, **draw the silhouette in code (Pillow) and use the model as a texture filler** (img2img, denoise 0.4–0.55), or use a LoRA trained on that creature. Prompt retries are not a fix.
+2. **The negative prompt must not fight the positive.** `3d render / matte / flat vector / icon / outline` in the negative turned a gloss-clay request into an anime girl; dropping them collapsed it to a single sphere. Check the pair for a self-fighting recipe before running it — never ship one.
+3. **Hold the seed in any A/B.** A two-run comparison at different seeds measures the seed, not the knob (measured on a FreeU A/B this way). Resolution is also a composition knob — fetch detail with a hires pass (`LatentUpscale` → second sampler at denoise 0.5–0.6), not a native large render.

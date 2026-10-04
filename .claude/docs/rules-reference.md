@@ -51,6 +51,7 @@ each rule's own globs list the case variants (`{AI,Ai,ai}`).
 | `prototype-code.md` | `prototypes/**` | Relaxed standards, README required, hypothesis documented |
 | `shader-code.md` | `assets/shaders/**`, `**/*.gdshader` · `Assets/**/*.{shader,hlsl,cginc,compute,shadergraph}` · `Shaders/**`, `**/*.{usf,ush}` | Naming conventions, performance targets, cross-platform rules |
 | `agent-memory.md` | `.claude/agent-memory/**` | The one place an agent may write unasked — and why a temporary absence must never be recorded as a durable fact |
+| `art-tooling.md` | `art-workspace/**` · `assets/**` · `Assets/**/*.{png,jpg,jpeg,tga,psd,exr,hdr,fbx,obj,blend,svg}` · `Content/**` · `design/art/**` · `references/**` | Tool routing, the four hard rules (source env.sh, geometry in code, never ship raw AI, measure artifacts), and the unverified-capability list |
 | `skill-authoring.md` | `.claude/skills/**`, `.claude/agents/**` | A check must be able to report that it did not run — the five obligations for verdicts, defaults, skips, sourcing and derived coverage |
 
 Each engine-facing rule loads on all three engines:

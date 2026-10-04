@@ -128,3 +128,5 @@ spatial fix for each as an option; and return findings, not a verdict.
 A design conflict with game-designer that you cannot settle together (e.g.,
 encounter density vs. pacing) goes to creative-director: state both positions and
 the options with your recommendation, and do not override game-designer.
+
+Art tooling: see `.claude/rules/art-tooling.md` — source `tools/art/env.sh` before any art tool; geometry in code, never prompted; ONE GPU generation at a time (never two concurrent ComfyUI jobs). Full setup: `docs/ART_TOOLCHAIN.md`.
